@@ -1,0 +1,12 @@
+---
+ apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: kosuke-iida-pipeline-from-scratch-pipeline-run-
+spec:
+  pipelineRef:
+    name: kosuke-iida-pipeline-from-scratch-pipeline
+  workspaces:
+      name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: kosuke-iida-pvc
